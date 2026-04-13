@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box } from '@mui/material';
 import { Header } from '../';
 
 interface LayoutProps {
@@ -16,19 +16,16 @@ export const Layout = ({ children }: LayoutProps) => {
     >
       <Header />
 
-      <StyledMain>
+      <Box
+        component='main'
+        sx={{
+          display: 'flex',
+          flex: 1,
+          flexDirection: 'column',
+        }}
+      >
         { children }
-      </StyledMain>
+      </Box>
     </Box>
   )
 }
-
-const StyledMain = styled('main')`
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0 20px 20px 20px;
-`;

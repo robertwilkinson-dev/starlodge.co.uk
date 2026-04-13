@@ -18,20 +18,25 @@ export const MapCard = () => {
       attributionControl: false,
     });
 
+    new mapboxgl.Marker({ color: '#007afc' })
+      .setLngLat([-2.5628569, 53.5969431])
+      .addTo(map.current);
+
   }, []);
 
   return (
     <Paper
-      elevation={3}
+      elevation={0}
       sx={{
-        borderRadius: '20px',
+        borderRadius: '16px',
         overflow: 'hidden',
+        border: '1px solid #e0e0e0',
       }}
     >
       <Box>
         <div ref={mapContainer}
           style={{
-            height: '250px',
+            height: '350px',
             width: '100%',
           }}
         />
