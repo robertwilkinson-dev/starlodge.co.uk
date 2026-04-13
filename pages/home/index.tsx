@@ -4,7 +4,7 @@ import questions from '../../faqs.json';
 
 const Home = () => {
 
-  const scrollToId = (id) => {
+  const scrollToId = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -19,13 +19,13 @@ const Home = () => {
         flexDirection: 'column',
       }}
     >
-      <Box 
-        sx={{ 
+      <Box
+        sx={{
           padding: '70px 0 50px 0',
-          display: 'flex', 
+          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-        }} 
+        }}
       >
           <Typography
             variant='h1'
@@ -49,7 +49,7 @@ const Home = () => {
           <Typography
             sx={{
               fontSize: {
-                xl: '24px', 
+                xl: '24px',
                 lg: '20px',
                 md: '20px',
                 sm: '16px',
@@ -66,9 +66,9 @@ const Home = () => {
             Located in Horwich, Bolton Star Lodge is a
             reservoir located near Crown Lane / Butterwick Fields.
             Originally used as a Millpond, Star Lodge is now home
-            to a range of wildlife. 
+            to a range of wildlife.
           </Typography>
-          
+
           {/* <Link href='/faqs'> */}
             <Button
               onClick={() => scrollToId('faqs')}
@@ -90,7 +90,7 @@ const Home = () => {
 
       <MapCard />
 
-      <Box sx={{ 
+      <Box sx={{
         padding: '40px 0 0 0',
         display: 'flex',
         flexDirection: 'column',
@@ -108,7 +108,7 @@ const Home = () => {
         >
           FAQs
         </Typography>
-        
+
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -120,7 +120,7 @@ const Home = () => {
         </Box>
       </Box>
 
-      <Box sx={{ 
+      <Box sx={{
         padding: '40px 0 0 0',
         display: 'flex',
         flexDirection: 'column',
@@ -138,7 +138,7 @@ const Home = () => {
         >
           Contributing
         </Typography>
-        
+
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',

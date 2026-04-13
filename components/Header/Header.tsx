@@ -1,4 +1,4 @@
-import { 
+import {
   AppBar,
   Box,
   Divider,
@@ -12,7 +12,6 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 export const navLinks = [
   { label: 'Home', value: 'home' },
@@ -22,7 +21,7 @@ export const navLinks = [
 ];
 
 const menuLabel = 'STAR LODGE';
- 
+
 export const Header = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -30,12 +29,12 @@ export const Header = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const [container, setContainer] = useState(null);
+  const [container, setContainer] = useState<(() => HTMLElement) | undefined>(undefined);
   useEffect(() => {
     setContainer(window !== undefined ? () => document.body : undefined);
   }, [ ]);
 
-  const scrollToId = (id) => {
+  const scrollToId = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -44,7 +43,7 @@ export const Header = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar 
+      <AppBar
         component={'nav'}
         position={'fixed'}
         sx={{
@@ -74,7 +73,7 @@ export const Header = () => {
           <IconButton
             sx={{
               color: 'text.primary',
-              mr: 2, 
+              mr: 2,
               display: { sm: 'none' }
             }}
             aria-label='open drawer'
@@ -86,7 +85,7 @@ export const Header = () => {
           <Box sx={{ display: { xs: 'none', sm: 'flex', gap: '20px' } }}>
             { navLinks.map(({ label, value }) => (
               // <Link key={`d-link-${value}`} href={`/${value}`} >
-                <Typography 
+                (<Typography
                   key={`d-link-${value}`}
                   onClick={() => scrollToId(value)}
                   sx={{
@@ -101,7 +100,7 @@ export const Header = () => {
                   }}
                 >
                   { label }
-                </Typography>
+                </Typography>)
               // </Link>
             ))}
           </Box>
@@ -121,17 +120,21 @@ export const Header = () => {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
           }}
         >
-          <SideMenu 
+          <SideMenu
             onToggle={scrollToId}
           />
         </Drawer>
       </Box>
     </Box>
-  )
+  );
 };
 
-const SideMenu = ({ onToggle }) => {
-  const handleToggle = (id) => {
+interface SideMenuProps {
+  onToggle: (id: string) => void;
+}
+
+const SideMenu = ({ onToggle }: SideMenuProps) => {
+  const handleToggle = (id: string) => {
     if (!onToggle) {
       return;
     }
@@ -143,7 +146,6 @@ const SideMenu = ({ onToggle }) => {
   return (
     <Box
       sx={{ textAlign: 'center' }}
-      onClick={handleToggle}
     >
       <Typography variant='h6' sx={{ my: 2 }} >
         { menuLabel }
@@ -152,18 +154,18 @@ const SideMenu = ({ onToggle }) => {
       <List>
         { navLinks.map(({ label, value }) => (
           // <Link  href={`/${value}`} >
-            <ListItem key={`m-link-${value}`}
+            (<ListItem key={`m-link-${value}`}
               onClick={() => handleToggle(value)}
             >
-              <ListItemText primary={label} 
+              <ListItemText primary={label}
                 sx={{
                   cursor: 'pointer',
                 }}
               />
-            </ListItem>
+            </ListItem>)
           // </Link>
         ))}
       </List>
     </Box>
-  )
+  );
 };

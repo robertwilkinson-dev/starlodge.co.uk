@@ -1,7 +1,11 @@
 import { Box, styled } from '@mui/material';
 import { Header } from '../';
 
-export const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <Box
       sx={{
@@ -11,7 +15,7 @@ export const Layout = ({ children }) => {
       }}
     >
       <Header />
-      
+
       <StyledMain>
         { children }
       </StyledMain>
