@@ -1,7 +1,8 @@
 import { Box, Typography, Button, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { ExpandMore as ExpandMoreIcon, Water as WaterIcon, GitHub as GitHubIcon } from '@mui/icons-material';
-import { MapCard, Footer } from '../../components';
+import { MapCard, Footer, NoticeBar } from '../../components';
 import questions from '../../faqs.json';
+import notices from '../../notices.json';
 
 const Home = () => {
 
@@ -108,6 +109,8 @@ const Home = () => {
           Read FAQs
         </Button>
       </Box>
+
+      <NoticeBar notices={notices} />
 
       {/* Map Section */}
       <Box sx={{
