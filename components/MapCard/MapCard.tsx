@@ -5,33 +5,38 @@ import { Paper, Box } from '@mui/material';
 
 export const MapCard = () => {
 
-  const mapContainer = useRef(null);
-  const map = useRef(null);  
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<mapboxgl.Map | null>(null);
 
   useEffect(() => {
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN ?? '';  
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN ?? '';
     map.current = new mapboxgl.Map({
-      container: mapContainer.current,
+      container: mapContainer.current!,
       style: 'mapbox://styles/mapbox/dark-v10',
-      center: [-2.5628569, 53.5969431], 
+      center: [-2.5628569, 53.5969431],
       zoom: 15,
       attributionControl: false,
-    }); 
-    
+    });
+
+    new mapboxgl.Marker({ color: '#007afc' })
+      .setLngLat([-2.5628569, 53.5969431])
+      .addTo(map.current);
+
   }, []);
 
   return (
     <Paper
-      elevation={3}
+      elevation={0}
       sx={{
-        borderRadius: '20px',
+        borderRadius: '16px',
         overflow: 'hidden',
+        border: '1px solid #e0e0e0',
       }}
     >
       <Box>
-        <div ref={mapContainer} 
+        <div ref={mapContainer}
           style={{
-            height: '250px',
+            height: '350px',
             width: '100%',
           }}
         />

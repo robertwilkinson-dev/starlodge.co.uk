@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-export const middleware = (request) => {
+export const proxy = (request) => {
   return NextResponse.redirect(new URL('/home', request.url))
 }
 

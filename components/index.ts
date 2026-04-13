@@ -3,3 +3,5 @@ export * from './Layout';
 export * from './Header';
 export * from './MapCard';
 export * from './FAQ';
+export * from './Footer';
+export * from './NoticeBar';

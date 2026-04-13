@@ -1,17 +1,27 @@
 [
   {
+    "id": 1,
+    "question": "Is fishing allowed at Star Lodge?",
+    "answer": "No. Fishing has been banned since 2006 following complaints from local residents. The ban was put in place by the landowner and remains in effect. You can read more about this in <a href='https://www.theboltonnews.co.uk/news/6236119.late-night-anglers-spark-fishing-ban/'>The Bolton News</a>."
+  },
+  {
     "id": 2,
-    "question": "Is Fishing allowed at Star Lodge?",
-    "answer": "No, fishing has not been allowed at Star Lodge since 2006. After a number of complaints from residents of the surrounding area, the land owner decided to ban fishing. You can read more about this <a href='https://www.theboltonnews.co.uk/news/6236119.late-night-anglers-spark-fishing-ban/'>here</a>."
+    "question": "Who owns and maintains the land?",
+    "answer": "The land is owned by Barratt Homes. If you notice any issues such as damage, fly-tipping, or antisocial behaviour, you can contact them through their <a href='https://www.barratthomes.co.uk/'>website</a>."
   },
   {
     "id": 3,
-    "question": "Who do I contact if I notice a problem at Star Lodge",
-    "answer": "Barratt Homes are the land owners, you can find their website <a href='https://www.barratthomes.co.uk/'>here</a>."
+    "question": "What wildlife can be seen at Star Lodge?",
+    "answer": "Star Lodge is home to ducks, geese, swans, herons, and various other birds, as well as fish and occasionally deer. Please don't feed the wildlife — it can be harmful to the animals and disrupt the local ecosystem."
   },
   {
     "id": 4,
-    "question": "What kind of wildlife do you see at Star Lodge?",
-    "answer": "Star lodge is home to: Ducks, Geese, Swans, Fish, Birds, Deer and more; However please do not feed the wildlife."
+    "question": "Can I walk my dog around the lodge?",
+    "answer": "Yes, dog walkers are welcome on the surrounding paths. Please keep dogs on leads near the water's edge to avoid disturbing the wildlife, and clean up after them."
+  },
+  {
+    "id": 5,
+    "question": "Is there parking nearby?",
+    "answer": "There is no dedicated parking for Star Lodge. If you are driving, please park considerately and be mindful of local residents."
   }
 ]

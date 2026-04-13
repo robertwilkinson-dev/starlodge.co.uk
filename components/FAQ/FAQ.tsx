@@ -1,7 +1,12 @@
 import { Box, Typography, styled } from '@mui/material';
 
-export const FAQ = ({ question, answer }) => {
-  
+interface FAQProps {
+  question: string;
+  answer: string;
+}
+
+export const FAQ = ({ question, answer }: FAQProps) => {
+
   return (
     <Box>
       <Typography
