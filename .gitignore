@@ -20,6 +20,7 @@
 *.pem
 .idea/
 .code/
+.claude/
 
 # debug
 npm-debug.log*
