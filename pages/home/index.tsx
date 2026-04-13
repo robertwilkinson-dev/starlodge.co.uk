@@ -81,9 +81,9 @@ const Home = () => {
             textAlign: 'center',
           }}
         >
-          A reservoir nestled in Horwich, Bolton near Crown Lane and
-          Butterwick Fields. Originally a millpond, now home to a
-          thriving range of wildlife.
+          A small reservoir in Horwich, Bolton, located off Crown Lane
+          near Butterwick Fields. Originally used as a millpond, Star Lodge
+          is now home to a variety of local wildlife.
         </Typography>
 
         <Button
